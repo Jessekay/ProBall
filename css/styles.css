@@ -176,7 +176,7 @@ section {
 }
 
 .icons {
-    position: absolute;
+    position: fixed;
     top: 50%;
     padding: 0 7%;
     transform:  translateY(-50%);
@@ -195,7 +195,7 @@ section {
 }
 
 .scroll {
-    position: absolute;
+    position: fixed;
     top: 92%;
     right: 7%;
     transform: translateY(-50%);
@@ -210,4 +210,26 @@ section {
     font-size: 20px;
     color: var(--text-color);
     margin-right: 6px;
+}
+
+.why-proball h2 {
+    color: var(--text-color);
+    margin-top: 50px;
+}
+
+.why-proball hr{
+    width: 8%; 
+    height: 6px;
+    background-color: var(--main-color);
+    /* color: var(--main-color); */
+    border: 1px solid var(--main-color);   
+}
+
+.unique {
+    display: flex;
+    align-items: center;
+}
+
+.unique h3 {
+    font-size: 20px;
 }
