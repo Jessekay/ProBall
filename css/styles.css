@@ -97,7 +97,7 @@ section {
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url(../images/bg.png);
+    /* background: url(../images/bg.png); */
     background-size: cover;
     background-position: center;
     display: grid;
@@ -107,8 +107,13 @@ section {
 }
 
 .hero-img {
-    width: 100%;
+    width: 130%;
     height: auto;
+}
+
+.hero-img:hover {
+    transform: scale(1.1);
+    transition: all .6s ease;
 }
 
 .hero-text h1 {
@@ -162,4 +167,47 @@ section {
     font-size: 18px;
     font-weight: regular;
     color: var(--text-color);
+}
+
+.price span {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--main-color);
+}
+
+.icons {
+    position: absolute;
+    top: 50%;
+    padding: 0 7%;
+    transform:  translateY(-50%);
+}
+
+.icons i {
+    display: block;
+    margin: 35px 0;
+    color: var(--text-color);
+}
+
+.icons i:hover {
+    transform: translateY(-5px);
+    color: var(--main-color);
+    transition: all .6s ease;
+}
+
+.scroll {
+    position: absolute;
+    top: 92%;
+    right: 7%;
+    transform: translateY(-50%);
+}
+
+.scroll a {
+    font-size: 16px;
+    color: var(--text-color);
+}
+
+.scroll i {
+    font-size: 20px;
+    color: var(--text-color);
+    margin-right: 6px;
 }
