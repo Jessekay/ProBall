@@ -331,7 +331,7 @@ section {
     align-self: center;
     position: absolute;
     margin-left: 3rem;
-    top: 55rem;
+    top: 58rem;
 
 }
 
@@ -342,7 +342,7 @@ section {
     align-self: center;
     position: absolute;
     margin-left: 3.3rem;
-    top: 72.2rem;
+    top: 75.3rem;
 
 }
 
@@ -353,7 +353,7 @@ section {
     align-self: center;
     position: absolute;
     margin-left: 3.7rem;
-    top: 89.4rem;
+    top: 92.5rem;
 
 }
 
@@ -634,3 +634,32 @@ a:hover{
     font-weight: 600;
 }
 
+.ball-cards {
+    display: grid;
+    grid-auto-flow: column;
+    justify-items: center;
+}
+
+.card {
+    width: 20rem;
+    height: 25rem;
+    border: 1px solid var(--main-color);
+    background-color: #2222226d;
+}
+
+.card-img {
+    width: 50%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    margin: 55px 0 0 75px;
+}
+
+.description {
+    padding: 10px;
+    width: 20%;
+}
+
+.card-button {
+    
+}
