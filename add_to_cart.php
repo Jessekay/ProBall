@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 
 session_start();
-$conn = pg_connect("host=localhost dbname=proball user=postgres password=your_password");
+$conn = pg_connect("host=localhost dbname=proball user=postgres password=12092001");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $data = json_decode(file_get_contents('php://input'), true);

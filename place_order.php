@@ -2,7 +2,7 @@
 header('Content-Type: application/json');
 
 session_start();
-$conn = pg_connect("host=localhost dbname=proball user=postgres password=your_password");
+$conn = pg_connect("host=localhost dbname=proball user=postgres password=12092001");
 
 $user_id = $_SESSION['user_id'];
 $query = "SELECT SUM(price * quantity) as total FROM cart WHERE user_id = $1";
