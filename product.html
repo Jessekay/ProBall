@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - ProBall Rwanda</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html">ProBall Rwanda</a></div>
+        <ul class="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#why-proball">Why us?</a></li>
+            <li class="dropdown">
+                <a href="#">Categories</a>
+                <ul class="categories-items">
+                    <li><a class="dropdown-a" href="football.html">Football</a></li>
+                    <li><a class="dropdown-a" href="basketball.html">Basketball</a></li>
+                    <li><a class="dropdown-a" href="rugby.html">Rugby</a></li>
+                </ul>
+            </li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="right-content">
+            <a href="profile.html" class="nav-btn">Profile</a>
+            <a href="cart.html" class="nav-btn">Cart</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Our Products</h1>
+            <p>Browse our collection of top-quality sports balls for Football, Basketball, and Rugby.</p>
+            <div class="main-hero">
+                <input type="text" id="searchBar" class="input-field" placeholder="Search balls..." onkeyup="searchBalls()">
+            </div>
+        </div>
+    </section>
+
+    <section class="body-section">
+        <div class="why-proball">
+            <h2>Football Balls</h2>
+            <hr>
+            <div class="ball-cards" id="football-balls">
+                <div class="card">
+                    <img src="images/pitch-ball.png" alt="Pitch Ball" class="card-img">
+                    <div class="description">
+                        <h3>Pitch Ball</h3>
+                        <p>Bright, durable, and match-ready.</p>
+                        <p>$24.00</p>
+                        <a href="product-details.html?name=Pitch Ball&sport=Football&price=24.00" class="card-btn">View Details</a>
+                    </div>
+                </div>
+                <!-- Add other football balls similarly -->
+            </div>
+        </div>
+
+        <div class="why-proball">
+            <h2>Basketball Balls</h2>
+            <hr>
+            <div class="ball-cards" id="basketball-balls">
+                <div class="card">
+                    <img src="images/strike-ball.png" alt="Strike Ball" class="card-img">
+                    <div class="description">
+                        <h3>Strike Ball</h3>
+                        <p>Durable, precise, and built for power.</p>
+                        <p>$28.00</p>
+                        <a href="product-details.html?name=Strike Ball&sport=Basketball&price=28.00" class="card-btn">View Details</a>
+                    </div>
+                </div>
+                <!-- Add other basketball balls -->
+            </div>
+        </div>
+
+        <div class="why-proball">
+            <h2>Rugby Balls</h2>
+            <hr>
+            <div class="ball-cards" id="rugby-balls">
+                <div class="card">
+                    <img src="images/league-ball.png" alt="League Ball" class="card-img">
+                    <div class="description">
+                        <h3>League Ball</h3>
+                        <p>Champions League-inspired.</p>
+                        <p>$30.00</p>
+                        <a href="product-details.html?name=League Ball&sport=Rugby&price=30.00" class="card-btn">View Details</a>
+                    </div>
+                </div>
+                <!-- Add other rugby balls -->
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="contact-footer">
+            <div>
+                <h3>Contact Us</h3>
+                <hr class="contact-hr">
+                <p><i class="fab fa-instagram"></i> @proball</p>
+                <p><i class="fas fa-phone"></i> +250787667797</p>
+            </div>
+            <div>
+                <h3>Address</h3>
+                <hr class="address-hr">
+                <p>KG 242 Street</p>
+                <p>Jesse's PLAZA</p>
+            </div>
+        </div>
+        <hr class="copyright-hr">
+        <div class="copyright">
+            <p>© 2025 ProBall Rwanda, Inc</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+ 
+    </script>

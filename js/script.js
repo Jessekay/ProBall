@@ -221,3 +221,147 @@
             messageDiv.style.display = 'block';
             setTimeout(() => messageDiv.style.display = 'none', 3000);
         }
+
+        // user profile
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('get_profile.php')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('username').value = data.username;
+                    document.getElementById('email').value = data.email;
+                    document.getElementById('first_name').value = data.first_name || '';
+                    document.getElementById('last_name').value = data.last_name || '';
+                    document.getElementById('address').value = data.address || '';
+                    document.getElementById('phone').value = data.phone || '';
+                });
+        });
+
+        function updateProfile() {
+            const email = document.getElementById('email').value;
+            const first_name = document.getElementById('first_name').value;
+            const last_name = document.getElementById('last_name').value;
+            const address = document.getElementById('address').value;
+            const phone = document.getElementById('phone').value;
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showMessage('Please enter a valid email.', false);
+                return;
+            }
+
+            fetch('update_profile.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, first_name, last_name, address, phone })
+            })
+            .then(response => response.json())
+            .then(data => showMessage(data.message, data.success))
+            .catch(() => showMessage('Error updating profile.', false));
+        }
+
+        function showMessage(text, isSuccess) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = text;
+            messageDiv.style.color = isSuccess ? 'var(--main-color)' : '#ff0000';
+            messageDiv.style.display = 'block';
+            setTimeout(() => messageDiv.style.display = 'none', 3000);
+        }
+
+        // profile
+
+          document.addEventListener('DOMContentLoaded', () => {
+            fetch('get_profile.php')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('username').value = data.username;
+                    document.getElementById('email').value = data.email;
+                    document.getElementById('first_name').value = data.first_name || '';
+                    document.getElementById('last_name').value = data.last_name || '';
+                    document.getElementById('address').value = data.address || '';
+                    document.getElementById('phone').value = data.phone || '';
+                });
+        });
+
+        function updateProfile() {
+            const email = document.getElementById('email').value;
+            const first_name = document.getElementById('first_name').value;
+            const last_name = document.getElementById('last_name').value;
+            const address = document.getElementById('address').value;
+            const phone = document.getElementById('phone').value;
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showMessage('Please enter a valid email.', false);
+                return;
+            }
+
+            fetch('update_profile.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, first_name, last_name, address, phone })
+            })
+            .then(response => response.json())
+            .then(data => showMessage(data.message, data.success))
+            .catch(() => showMessage('Error updating profile.', false));
+        }
+
+        function showMessage(text, isSuccess) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = text;
+            messageDiv.style.color = isSuccess ? 'var(--main-color)' : '#ff0000';
+            messageDiv.style.display = 'block';
+            setTimeout(() => messageDiv.style.display = 'none', 3000);
+        }
+
+        // product details
+
+         document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            document.getElementById('product-name').textContent = params.get('name');
+            document.getElementById('product-sport').textContent = params.get('sport');
+            document.getElementById('product-description').textContent = params.get('name') === 'Pitch Ball' ? 'Bright, durable, and match-ready.' : 
+                                                                     params.get('name') === 'Strike Ball' ? 'Durable, precise, and built for power.' : 
+                                                                     'Champions League-inspired.';
+            document.getElementById('product-price').textContent = `$${params.get('price')}`;
+            document.getElementById('product-image').src = `images/${params.get('name').toLowerCase().replace(' ', '-')}-ball.png`;
+        });
+
+        function addToCart() {
+            const params = new URLSearchParams(window.location.search);
+            const name = params.get('name');
+            const sport = params.get('sport');
+            const price = parseFloat(params.get('price'));
+            const quantity = parseInt(document.getElementById('quantity').value);
+
+            if (quantity < 1) {
+                showMessage('Please enter a valid quantity.', false);
+                return;
+            }
+
+            fetch('add_to_cart.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, sport, price, quantity })
+            })
+            .then(response => response.json())
+            .then(data => showMessage(data.message, data.success))
+            .catch(() => showMessage('Error adding to cart.', false));
+        }
+
+        function showMessage(text, isSuccess) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = text;
+            messageDiv.style.color = isSuccess ? 'var(--main-color)' : '#ff0000';
+            messageDiv.style.display = 'block';
+            setTimeout(() => messageDiv.style.display = 'none', 3000);
+        }
+
+        // product 
+
+               function searchBalls() {
+            let input = document.getElementById('searchBar').value.toLowerCase();
+            let cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                let name = card.querySelector('h3').textContent.toLowerCase();
+                card.style.display = name.includes(input) ? 'block' : 'none';
+            });
+        }
