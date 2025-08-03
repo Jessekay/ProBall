@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart - ProBall Rwanda</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html">ProBall Rwanda</a></div>
+        <ul class="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="index.html#why-proball">Why us?</a></li>
+            <li class="dropdown">
+                <a href="#">Categories</a>
+                <ul class="categories-items">
+                    <li><a class="dropdown-a" href="football.html">Football</a></li>
+                    <li><a class="dropdown-a" href="basketball.html">Basketball</a></li>
+                    <li><a class="dropdown-a" href="rugby.html">Rugby</a></li>
+                </ul>
+            </li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="right-content">
+            <a href="profile.html" class="nav-btn">Profile</a>
+            <a href="products.html" class="nav-btn">Products</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Your Cart</h1>
+            <p>Review your selected items and place your order.</p>
+            <div id="cart-items" class="ball-cards"></div>
+            <div class="main-hero">
+                <h3 id="total-amount">Total: $0.00</h3>
+                <button class="btn" onclick="placeOrder()">Place Order</button>
+            </div>
+            <div id="cart-message" style="display: none; margin-top: 20px; color: var(--main-color);"></div>
+
+            <div class="why-proball" style="margin-top: 50px;">
+                <h2>Order History</h2>
+                <hr>
+                <div id="order-history" class="ball-cards"></div>
+                <div id="order-message" style="display: none; margin-top: 20px; color: var(--main-color);"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="contact-footer">
+            <div>
+                <h3>Contact Us</h3>
+                <hr class="contact-hr">
+                <p><i class="fab fa-instagram"></i> @proball</p>
+                <p><i class="fas fa-phone"></i> +250787667797</p>
+            </div>
+            <div>
+                <h3>Address</h3>
+                <hr class="address-hr">
+                <p>KG 242 Street</p>
+                <p>Jesse's PLAZA</p>
+            </div>
+        </div>
+        <hr class="copyright-hr">
+        <div class="copyright">
+            <p>© 2025 ProBall Rwanda, Inc</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        
+    </script>
