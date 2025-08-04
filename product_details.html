@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Details - ProBall Rwanda</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -69,5 +69,44 @@
 
     <script src="script.js"></script>
     <script>
-       
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            document.getElementById('product-name').textContent = params.get('name');
+            document.getElementById('product-sport').textContent = params.get('sport');
+            document.getElementById('product-description').textContent = params.get('name') === 'Pitch Ball' ? 'Bright, durable, and match-ready.' : 
+                                                                     params.get('name') === 'Strike Ball' ? 'Durable, precise, and built for power.' : 
+                                                                     'Champions League-inspired.';
+            document.getElementById('product-price').textContent = `$${params.get('price')}`;
+            document.getElementById('product-image').src = `images/${params.get('name').toLowerCase().replace(' ', '-')}-ball.png`;
+        });
+
+        function addToCart() {
+            const params = new URLSearchParams(window.location.search);
+            const name = params.get('name');
+            const sport = params.get('sport');
+            const price = parseFloat(params.get('price'));
+            const quantity = parseInt(document.getElementById('quantity').value);
+
+            if (quantity < 1) {
+                showMessage('Please enter a valid quantity.', false);
+                return;
+            }
+
+            fetch('add_to_cart.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, sport, price, quantity })
+            })
+            .then(response => response.json())
+            .then(data => showMessage(data.message, data.success))
+            .catch(() => showMessage('Error adding to cart.', false));
+        }
+
+        function showMessage(text, isSuccess) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = text;
+            messageDiv.style.color = isSuccess ? 'var(--main-color)' : '#ff0000';
+            messageDiv.style.display = 'block';
+            setTimeout(() => messageDiv.style.display = 'none', 3000);
+        }
     </script>

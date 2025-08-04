@@ -19,8 +19,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
-
 </head>
 <body>
     <header>
@@ -34,44 +32,126 @@
         </div>
     </header>
     <section class="sign-in">
-        <form action="" method="post">
+        <form action="" method="post" onsubmit="return false;">
        <div class="login-box">
-        <!-- <div class="login-header"> -->
             <h1 class="login-title">Sign up</h1><br><br>
-        <!-- </div> -->
-         <div class="input-box">
-            <input type="text" class="input-field" placeholder="First name" autocomplete="off" required>
+        <div class="input-box">
+            <input type="text" class="input-field" id="first_name" placeholder="First name" autocomplete="off" required>
         </div>
         <div class="input-box">
-            <input type="text" class="input-field" placeholder="Last name" autocomplete="off" required>
+            <input type="text" class="input-field" id="last_name" placeholder="Last name" autocomplete="off" required>
         </div>
         <div class="input-box">
-            <input type="text" class="input-field" placeholder="Email" autocomplete="off" required>
+            <input type="text" class="input-field" id="email" placeholder="Email" autocomplete="off" required>
         </div>
         <div class="input-box">
-            <input type="password" class="input-field" placeholder="Password" autocomplete="off" required>
+            <input type="password" class="input-field" id="password" placeholder="Password" autocomplete="off" required>
         </div>
         <div class="forgot">
-            <!-- <section>
-                <input type="checkbox" id="check">
-                <label for="check">Remember me</label>
-            </section> -->
             <section>
                 <a href="#" class="forgot-pass">Forgot password</a>
             </section>
         </div>
         <div class="input-submit">
-            <button class="submit-btn" id="submit"></button>
-            <label for="submit">Sign In</label>
+            <button class="submit-btn" id="submit" onclick="register()"></button>
+            <label for="submit">Sign Up</label>
         </div>
         <div class="sign-up-link">
             <p>Already have account? <a href="login.html">Sign in</a></p>
         </div>
+        <div id="message" class="sign-up-link" style="display: none; margin-top: 20px;"></div>
         </div>
         </form>
     </section>
 
     <script src="./js/script.js"></script>
+    <script>
+async function register() {
+    const submitBtn = document.getElementById('submit');
+    const messageDiv = document.getElementById('message');
+    
+    // Reset UI state
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status"></span> Registering...';
+    messageDiv.style.display = 'none';
 
-</body>
-</html>
+    try {
+        // Get form values
+        const formData = {
+            first_name: document.getElementById('first_name').value.trim(),
+            last_name: document.getElementById('last_name').value.trim(),
+            email: document.getElementById('email').value.trim(),
+            password: document.getElementById('password').value
+        };
+
+        // Client-side validation
+        if (!formData.first_name || !formData.last_name || !formData.email || !formData.password) {
+            throw new Error('All fields are required');
+        }
+
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            throw new Error('Please enter a valid email');
+        }
+
+        if (formData.password.length < 6) {
+            throw new Error('Password must be at least 6 characters');
+        }
+
+        // Send request
+        const response = await fetch('save_user.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
+
+        // Handle non-JSON responses
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
+            const text = await response.text();
+            throw new Error(`Server returned unexpected response: ${text.substring(0, 100)}`);
+        }
+
+        const data = await response.json();
+
+        if (!response.ok || !data.success) {
+            throw new Error(data.message || 'Registration failed');
+        }
+
+        // Success case
+        showMessage(data.message, true);
+        
+        // Redirect after delay
+        setTimeout(() => {
+            window.location.href = data.redirect || 'products.html';
+        }, 1500);
+
+    } catch (error) {
+        showMessage(error.message, false);
+        console.error('Registration error:', error);
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Sign Up';
+    }
+}
+
+function showMessage(message, isSuccess) {
+    const messageDiv = document.getElementById('message');
+    messageDiv.textContent = message;
+    messageDiv.style.color = isSuccess ? '#28a745' : '#dc3545';
+    messageDiv.style.display = 'block';
+    messageDiv.style.padding = '10px';
+    messageDiv.style.margin = '10px 0';
+    messageDiv.style.borderRadius = '4px';
+    messageDiv.style.backgroundColor = isSuccess ? '#d4edda' : '#f8d7da';
+    
+    // Auto-hide success messages after redirect
+    if (!isSuccess) {
+        setTimeout(() => {
+            messageDiv.style.display = 'none';
+        }, 5000);
+    }
+}
+    </script>

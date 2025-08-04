@@ -19,8 +19,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    
-
 </head>
 <body>
     <header>
@@ -34,38 +32,68 @@
         </div>
     </header>
     <section class="sign-in">
-        <form action="" method="post">
+        <form action="" method="post" onsubmit="return false;">
        <div class="login-box">
-        <!-- <div class="login-header"> -->
             <h1 class="login-title">Login</h1><br><br>
-        <!-- </div> -->
         <div class="input-box">
-            <input type="text" class="input-field" placeholder="Email" autocomplete="off" required>
+            <input type="text" class="input-field" id="email" placeholder="Email" autocomplete="off" required>
         </div>
         <div class="input-box">
-            <input type="password" class="input-field" placeholder="Password" autocomplete="off" required>
+            <input type="password" class="input-field" id="password" placeholder="Password" autocomplete="off" required>
         </div>
         <div class="forgot">
-            <!-- <section>
-                <input type="checkbox" id="check">
-                <label for="check">Remember me</label>
-            </section> -->
             <section>
                 <a href="#" class="forgot-pass">Forgot password</a>
             </section>
         </div>
         <div class="input-submit">
-            <button class="submit-btn" id="submit"></button>
+            <button class="submit-btn" id="submit" onclick="login()"></button>
             <label for="submit">Sign In</label>
         </div>
         <div class="sign-up-link">
             <p>Don't have account? <a href="register.html">Sign Up</a></p>
         </div>
+        <div id="message" class="sign-up-link" style="display: none; margin-top: 20px;"></div>
         </div>
         </form>
     </section>
 
     <script src="./js/script.js"></script>
+    <script>
+        function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
 
-</body>
-</html>
+            if (!email || !password) {
+                showMessage('All fields are required.', false);
+                return;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showMessage('Please enter a valid email.', false);
+                return;
+            }
+
+            fetch('login.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                showMessage(data.message, data.success);
+                if (data.success) {
+                    setTimeout(() => window.location.href = 'products.html', 2000);
+                }
+            })
+            .catch(() => showMessage('Error logging in.', false));
+        }
+
+        function showMessage(text, isSuccess) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = text;
+            messageDiv.style.color = isSuccess ? '#69a4c168' : '#ff0000';
+            messageDiv.style.display = 'block';
+            setTimeout(() => messageDiv.style.display = 'none', 3000);
+        }
+    </script>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile - ProBall Rwanda</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -82,5 +82,46 @@
 
     <script src="script.js"></script>
     <script>
-      
+        document.addEventListener('DOMContentLoaded', () => {
+            fetch('get_profile.php')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('username').value = data.username;
+                    document.getElementById('email').value = data.email;
+                    document.getElementById('first_name').value = data.first_name || '';
+                    document.getElementById('last_name').value = data.last_name || '';
+                    document.getElementById('address').value = data.address || '';
+                    document.getElementById('phone').value = data.phone || '';
+                });
+        });
+
+        function updateProfile() {
+            const email = document.getElementById('email').value;
+            const first_name = document.getElementById('first_name').value;
+            const last_name = document.getElementById('last_name').value;
+            const address = document.getElementById('address').value;
+            const phone = document.getElementById('phone').value;
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showMessage('Please enter a valid email.', false);
+                return;
+            }
+
+            fetch('update_profile.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ email, first_name, last_name, address, phone })
+            })
+            .then(response => response.json())
+            .then(data => showMessage(data.message, data.success))
+            .catch(() => showMessage('Error updating profile.', false));
+        }
+
+        function showMessage(text, isSuccess) {
+            const messageDiv = document.getElementById('message');
+            messageDiv.textContent = text;
+            messageDiv.style.color = isSuccess ? 'var(--main-color)' : '#ff0000';
+            messageDiv.style.display = 'block';
+            setTimeout(() => messageDiv.style.display = 'none', 3000);
+        }
     </script>

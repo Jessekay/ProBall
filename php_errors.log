@@ -1,0 +1,90 @@
+[04-Aug-2025 08:41:34 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 33
+[04-Aug-2025 08:41:34 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 36
+[04-Aug-2025 08:41:34 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 37
+[04-Aug-2025 08:41:34 UTC] User registered successfully: rc@gmail.com
+[04-Aug-2025 08:41:34 UTC] User registered successfully: rc@gmail.com
+[04-Aug-2025 08:41:34 UTC] PHP Notice:  ob_end_clean(): Failed to delete buffer. No buffer to delete in C:\Users\LENOVO\ProBall\save_user.php on line 103
+[04-Aug-2025 08:41:34 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 33
+[04-Aug-2025 08:41:34 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 36
+[04-Aug-2025 08:41:34 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 37
+[04-Aug-2025 08:41:34 UTC] Duplicate username or email: akaliza.racia, rc@gmail.com
+[04-Aug-2025 08:48:35 UTC] PHP Warning:  pg_connect(): Unable to connect to PostgreSQL server: connection to server at &quot;localhost&quot; (::1), port 5432 failed: FATAL:  password authentication failed for user &quot;postgres&quot; in C:\Users\LENOVO\ProBall\save_user.php on line 10
+[04-Aug-2025 08:48:35 UTC] PHP Deprecated:  pg_last_error(): Automatic fetching of PostgreSQL connection is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 14
+[04-Aug-2025 08:48:35 UTC] PHP Fatal error:  Uncaught Error: No PostgreSQL connection opened yet in C:\Users\LENOVO\ProBall\save_user.php:14
+Stack trace:
+#0 C:\Users\LENOVO\ProBall\save_user.php(14): pg_last_error()
+#1 {main}
+  thrown in C:\Users\LENOVO\ProBall\save_user.php on line 14
+[04-Aug-2025 08:48:35 UTC] PHP Warning:  pg_connect(): Unable to connect to PostgreSQL server: connection to server at &quot;localhost&quot; (::1), port 5432 failed: FATAL:  password authentication failed for user &quot;postgres&quot; in C:\Users\LENOVO\ProBall\save_user.php on line 10
+[04-Aug-2025 08:48:35 UTC] PHP Deprecated:  pg_last_error(): Automatic fetching of PostgreSQL connection is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 14
+[04-Aug-2025 08:48:35 UTC] PHP Fatal error:  Uncaught Error: No PostgreSQL connection opened yet in C:\Users\LENOVO\ProBall\save_user.php:14
+Stack trace:
+#0 C:\Users\LENOVO\ProBall\save_user.php(14): pg_last_error()
+#1 {main}
+  thrown in C:\Users\LENOVO\ProBall\save_user.php on line 14
+[04-Aug-2025 08:49:33 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 33
+[04-Aug-2025 08:49:33 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 36
+[04-Aug-2025 08:49:33 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 37
+[04-Aug-2025 08:49:33 UTC] User registered successfully: baily@gmail.com, User ID: 11
+[04-Aug-2025 08:49:33 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 33
+[04-Aug-2025 08:49:33 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 36
+[04-Aug-2025 08:49:33 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 37
+[04-Aug-2025 08:49:33 UTC] Duplicate found - Username: baily.byiringiro, Email: baily@gmail.com, Existing: {"user_id":"11"}
+[04-Aug-2025 08:50:23 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 33
+[04-Aug-2025 08:50:23 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 36
+[04-Aug-2025 08:50:23 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 37
+[04-Aug-2025 08:50:23 UTC] User registered successfully: edisthon@gmail.com, User ID: 12
+[04-Aug-2025 08:50:23 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 33
+[04-Aug-2025 08:50:23 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 36
+[04-Aug-2025 08:50:23 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 37
+[04-Aug-2025 08:50:23 UTC] Duplicate found - Username: edisthon.nshuti, Email: edisthon@gmail.com, Existing: {"user_id":"12"}
+[04-Aug-2025 08:52:30 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 33
+[04-Aug-2025 08:52:30 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 36
+[04-Aug-2025 08:52:30 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 37
+[04-Aug-2025 08:52:30 UTC] User registered successfully: agape@gmail.com, User ID: 13
+[04-Aug-2025 08:52:30 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 33
+[04-Aug-2025 08:52:30 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 36
+[04-Aug-2025 08:52:30 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 37
+[04-Aug-2025 08:52:30 UTC] Duplicate found - Username: shema.agape, Email: agape@gmail.com, Existing: {"user_id":"13"}
+[04-Aug-2025 08:53:08 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 33
+[04-Aug-2025 08:53:08 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 36
+[04-Aug-2025 08:53:08 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 37
+[04-Aug-2025 08:53:08 UTC] User registered successfully: tom@gmail.com, User ID: 14
+[04-Aug-2025 08:53:08 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 33
+[04-Aug-2025 08:53:08 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 36
+[04-Aug-2025 08:53:08 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 37
+[04-Aug-2025 08:53:08 UTC] Duplicate found - Username: mugisha.tom, Email: tom@gmail.com, Existing: {"user_id":"14"}
+[04-Aug-2025 08:54:06 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 33
+[04-Aug-2025 08:54:06 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 36
+[04-Aug-2025 08:54:06 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 37
+[04-Aug-2025 08:54:06 UTC] User registered successfully: kami@gmail.com
+[04-Aug-2025 08:54:06 UTC] User registered successfully: kami@gmail.com
+[04-Aug-2025 08:54:06 UTC] PHP Notice:  ob_end_clean(): Failed to delete buffer. No buffer to delete in C:\Users\LENOVO\ProBall\save_user.php on line 103
+[04-Aug-2025 08:54:06 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 33
+[04-Aug-2025 08:54:06 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 36
+[04-Aug-2025 08:54:06 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 37
+[04-Aug-2025 08:54:06 UTC] Duplicate username or email: kami.remmy, kami@gmail.com
+[04-Aug-2025 08:57:47 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 33
+[04-Aug-2025 08:57:47 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 36
+[04-Aug-2025 08:57:47 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 37
+[04-Aug-2025 08:57:48 UTC] User registered successfully: tito@gmail.com
+[04-Aug-2025 08:57:48 UTC] User registered successfully: tito@gmail.com
+[04-Aug-2025 08:57:48 UTC] PHP Notice:  ob_end_clean(): Failed to delete buffer. No buffer to delete in C:\Users\LENOVO\ProBall\save_user.php on line 103
+[04-Aug-2025 08:57:48 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 33
+[04-Aug-2025 08:57:48 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 36
+[04-Aug-2025 08:57:48 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 37
+[04-Aug-2025 08:57:48 UTC] PHP Warning:  pg_query_params(): Query failed: ERROR:  duplicate key value violates unique constraint &quot;users_username_key&quot;
+DETAIL:  Key (username)=(jimmy.tito) already exists. in C:\Users\LENOVO\ProBall\save_user.php on line 79
+[04-Aug-2025 08:57:48 UTC] Registration failed: ERROR:  duplicate key value violates unique constraint "users_username_key"
+DETAIL:  Key (username)=(jimmy.tito) already exists.
+[04-Aug-2025 09:03:47 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 33
+[04-Aug-2025 09:03:47 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 36
+[04-Aug-2025 09:03:47 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 37
+[04-Aug-2025 09:03:47 UTC] User registered successfully: junior@gmail.com, User ID: 18
+[04-Aug-2025 09:03:47 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 33
+[04-Aug-2025 09:03:47 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 36
+[04-Aug-2025 09:03:47 UTC] PHP Deprecated:  Constant FILTER_SANITIZE_STRING is deprecated in C:\Users\LENOVO\ProBall\save_user.php on line 37
+[04-Aug-2025 09:03:48 UTC] PHP Warning:  pg_query_params(): Query failed: ERROR:  duplicate key value violates unique constraint &quot;users_username_key&quot;
+DETAIL:  Key (username)=(neymar.junior) already exists. in C:\Users\LENOVO\ProBall\save_user.php on line 63
+[04-Aug-2025 09:03:48 UTC] Duplicate username or email: neymar.junior, junior@gmail.com, Error: ERROR:  duplicate key value violates unique constraint "users_username_key"
+DETAIL:  Key (username)=(neymar.junior) already exists.

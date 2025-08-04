@@ -155,12 +155,12 @@ section {
 
 .messi-img {
     width: 90%;
-    height: 35rem;
+    height: 45rem;
 }
 
 .baco-img {
     width: 120%;
-    height: 35rem;
+    height: 45rem;
     margin-top: 4rem;
 }
 
@@ -693,4 +693,21 @@ a:hover{
 
 .card-btn:hover {
     transform: scale(1.1);
+}
+
+/* Add to existing styles.css if needed */
+.order-history-section {
+    margin-top: 40px;
+}
+
+.order-history-section h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+.order-history-section hr {
+    width: 8%;
+    height: 3px;
+    background-color: var(--main-color);
+    border: 1px solid var(--main-color);
 }
