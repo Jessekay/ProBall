@@ -29,23 +29,70 @@
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-text">
-            <h1 id="product-name"></h1>
-            <h5 id="product-sport"></h5>
-            <p id="product-description"></p>
-            <p id="product-price"></p>
-            <div class="main-hero">
-                <input type="number" id="quantity" class="input-field" value="1" min="1">
-                <button class="btn" onclick="addToCart()">Add to Cart</button>
+    
+    <section class="product-detail">
+        <div class="product-gallery">
+            <img src="./images/pitch-ball.png" alt="Pitch Ball" class="main-image">
+            <div class="thumbnail-container">
+                <img src="./images/pitch-ball-alt1.jpg" alt="Alternative view">
+                <img src="./images/pitch-ball-alt2.jpg" alt="Alternative view">
             </div>
-            <div id="message" style="display: none; margin-top: 20px; color: var(--main-color);"></div>
         </div>
-        <div>
-            <img id="product-image" class="hero-img" alt="Product Image">
+        
+        <div class="product-info">
+            <h1 id="productName">Pitch Ball</h1>
+            <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">(24 reviews)</span>
+            </div>
+            <p class="price">$24.99</p>
+            <p class="description">Bright, durable, and match-ready football designed for professional play and training.</p>
+            
+            <div class="product-meta">
+                <p><strong>Sport:</strong> <span id="sportType">Football</span></p>
+                <p><strong>Material:</strong> High-grade synthetic leather</p>
+                <p><strong>Size:</strong> Standard 5</p>
+                <p><strong>In Stock:</strong> 15 units</p>
+            </div>
+            
+            <div class="quantity-selector">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" min="1" max="10" value="1">
+            </div>
+            
+            <div class="action-buttons">
+                <button class="btn-primary" onclick="addToCart()">Add to Cart</button>
+                <button class="btn-secondary">Buy Now</button>
+            </div>
         </div>
     </section>
 
+    <section class="product-tabs">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('description')">Description</button>
+            <button class="tab-btn" onclick="openTab('specs')">Specifications</button>
+            <button class="tab-btn" onclick="openTab('reviews')">Reviews</button>
+        </div>
+        
+        <div id="description" class="tab-content active">
+            <h3>Product Description</h3>
+            <p>Detailed description of the product features, benefits, and usage.</p>
+        </div>
+        
+        <div id="specs" class="tab-content">
+            <h3>Technical Specifications</h3>
+            <ul>
+                <li>Weight: 410-450g</li>
+                <li>Circumference: 68-70cm</li>
+                <li>Water-resistant</li>
+            </ul>
+        </div>
+        
+        <div id="reviews" class="tab-content">
+            <h3>Customer Reviews</h3>
+            <!-- Review content -->
+        </div>
+    </section>
     <footer class="footer">
         <div class="contact-footer">
             <div>

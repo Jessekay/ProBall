@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -44,12 +44,6 @@
                 </div>
                 <div class="input-box">
                     <input type="text" id="last_name" class="input-field" placeholder="Last Name">
-                </div>
-                <div class="input-box">
-                    <input type="text" id="address" class="input-field" placeholder="Address">
-                </div>
-                <div class="input-box">
-                    <input type="text" id="phone" class="input-field" placeholder="Phone">
                 </div>
                 <div class="input-submit">
                     <button class="submit-btn" onclick="updateProfile()"><label>Update Profile</label></button>
@@ -124,4 +118,218 @@
             messageDiv.style.display = 'block';
             setTimeout(() => messageDiv.style.display = 'none', 3000);
         }
+    </script> -->
+
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - ProBall Rwanda</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <div class="logo"><a href="index.html">ProBall Rwanda</a></div>
+        <ul class="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li><a href="orders.html">My Orders</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="right-content">
+            <a href="cart.html" class="nav-btn">Cart</a>
+        </div>
+    </header>
+
+    <section class="profile-container">
+        <div class="profile-header">
+            <div class="profile-avatar">
+                <i class="fas fa-user"></i>
+            </div>
+            <div class="profile-info">
+                <h2 id="username">Username</h2>
+                <p>Member since <span id="join-date">2025</span></p>
+            </div>
+        </div>
+
+        <div class="profile-nav">
+            <a href="#personal-info" class="active">Personal Info</a>
+            <a href="#order-history">Order History</a>
+            <a href="#settings">Settings</a>
+        </div>
+
+        <div class="profile-content">
+            <div class="profile-sidebar">
+                <ul class="sidebar-menu">
+                    <li><a href="#" class="active"><i class="fas fa-user-circle"></i> Profile</a></li>
+                    <li><a href="orders.html"><i class="fas fa-history"></i> Order History</a></li>
+                    <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Shopping Cart</a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i> Wishlist</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li><a href="#" id="logout-btn"><i class="fas fa-sign-out-alt"></i> Log Out</a></li>
+                </ul>
+            </div>
+
+            <div class="profile-main" id="personal-info">
+                <h3>Personal Information</h3>
+                <div class="profile-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="first_name">First Name</label>
+                            <input type="text" id="first_name" class="input-field" placeholder="Enter first name">
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name">Last Name</label>
+                            <input type="text" id="last_name" class="input-field" placeholder="Enter last name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="input-field" placeholder="Enter email address">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" class="input-field" placeholder="Enter phone number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Shipping Address</label>
+                        <textarea id="address" class="input-field" rows="3" placeholder="Enter full shipping address"></textarea>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn-primary" onclick="updateProfile()">Save Changes</button>
+                        <button class="btn-secondary" onclick="resetForm()">Reset</button>
+                    </div>
+                </div>
+
+                <div class="security-section">
+                    <h3>Account Security</h3>
+                    <div class="security-card">
+                        <div class="security-info">
+                            <i class="fas fa-lock"></i>
+                            <div>
+                                <h4>Password</h4>
+                                <p>Last changed 3 months ago</p>
+                            </div>
+                        </div>
+                        <button class="btn-secondary" onclick="changePassword()">Change Password</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="contact-footer">
+            <div>
+                <h3>Contact Us</h3>
+                <hr class="contact-hr">
+                <p><i class="fab fa-instagram"></i> @proball</p>
+                <p><i class="fas fa-phone"></i> +250787667797</p>
+            </div>
+            <div>
+                <h3>Address</h3>
+                <hr class="address-hr">
+                <p>KG 242 Street</p>
+                <p>Jesse's PLAZA</p>
+            </div>
+        </div>
+        <hr class="copyright-hr">
+        <div class="copyright">
+            <p>© 2025 ProBall Rwanda, Inc</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Load profile data
+            fetch('get_profile.php')
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('username').textContent = data.username || 'User';
+                    document.getElementById('email').value = data.email || '';
+                    document.getElementById('first_name').value = data.first_name || '';
+                    document.getElementById('last_name').value = data.last_name || '';
+                    document.getElementById('address').value = data.address || '';
+                    document.getElementById('phone').value = data.phone || '';
+                    
+                    // Set avatar initials if no image
+                    if (!data.profile_image) {
+                        const initials = (data.first_name?.charAt(0) + (data.last_name?.charAt(0)) || 'U');
+                        document.querySelector('.profile-avatar').textContent = initials;
+                    }
+                });
+        });
+
+        function updateProfile() {
+            const email = document.getElementById('email').value;
+            const first_name = document.getElementById('first_name').value;
+            const last_name = document.getElementById('last_name').value;
+            const address = document.getElementById('address').value;
+            const phone = document.getElementById('phone').value;
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                showMessage('Please enter a valid email address', false);
+                return;
+            }
+
+            fetch('update_profile.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ 
+                    email, 
+                    first_name, 
+                    last_name, 
+                    address, 
+                    phone 
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                showMessage(data.message || 'Profile updated successfully', data.success);
+                if (data.success) {
+                    // Update displayed username if changed
+                    const username = `${first_name} ${last_name}`.trim() || 'User';
+                    document.getElementById('username').textContent = username || 'User';
+                }
+            })
+            .catch(() => showMessage('Error updating profile', false));
+        }
+
+        function changePassword() {
+            // Implement password change modal/dialog
+            const newPassword = prompt('Enter new password:');
+            if (newPassword && newPassword.length >= 8) {
+                showMessage('Password changed successfully', true);
+            } else if (newPassword) {
+                showMessage('Password must be at least 8 characters', false);
+            }
+        }
+
+        function resetForm() {
+            document.getElementById('profile-form').reset();
+        }
+
+        function showMessage(text, isSuccess) {
+            const message = document.createElement('div');
+            message.className = `profile-message ${isSuccess ? 'success' : 'error'}`;
+            message.textContent = text;
+            
+            const main = document.querySelector('.profile-main');
+            main.prepend(message);
+            
+            setTimeout(() => {
+                message.style.opacity = '0';
+                setTimeout(() => message.remove(), 300);
+            }, 3000);
+        }
     </script>
+</body>
+</html>

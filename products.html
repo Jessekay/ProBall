@@ -27,71 +27,264 @@
             <a href="profile.html" class="nav-btn">Profile</a>
             <a href="cart.html" class="nav-btn">Cart</a>
         </div>
-    </header>
+    </header><br><br><br>
 
-    <section class="hero">
-        <div class="hero-text">
-            <h1>Our Products</h1>
-            <p>Browse our collection of top-quality sports balls for Football, Basketball, and Rugby.</p>
-            <div class="main-hero">
-                <input type="text" id="searchBar" class="input-field" placeholder="Search balls..." onkeyup="searchBalls()">
+    
+    <section class="product-detail">
+        <div class="product-gallery">
+            <img src="./images/football-nike.png" alt="Pitch Ball" class="main-image">
+            <div class="thumbnail-container">
+                <img src="./images/football-nike.png" alt="Alternative view">
+                <img src="./images/football-adidas.png" alt="Alternative view">
+            </div>
+        </div>
+        
+        <div class="product-info">
+            <h1 id="productName">Pitch Ball</h1>
+            <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">(24 reviews)</span>
+            </div>
+            <p class="price">$24.99</p>
+            <p class="description">Bright, durable, and match-ready football designed for professional play and training.</p>
+            
+            <div class="product-meta">
+                <p><strong>Sport:</strong> <span id="sportType">Football</span></p>
+                <p><strong>Material:</strong> High-grade synthetic leather</p>
+                <p><strong>Size:</strong> Standard 5</p>
+                <p><strong>In Stock:</strong> 15 units</p>
+            </div>
+            
+            <div class="quantity-selector">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" min="1" max="10" value="1">
+            </div>
+            
+            <div class="action-buttons">
+                <button class="btn-primary" onclick="addToCart()">Add to Cart</button>
+                <button class="btn-secondary">Buy Now</button>
             </div>
         </div>
     </section>
 
-    <section class="body-section">
-        <div class="why-proball">
-            <h2>Football Balls</h2>
-            <hr>
-            <div class="ball-cards" id="football-balls">
-                <div class="card">
-                    <img src="images/pitch-ball.png" alt="Pitch Ball" class="card-img">
-                    <div class="description">
-                        <h3>Pitch Ball</h3>
-                        <p>Bright, durable, and match-ready.</p>
-                        <p>$24.00</p>
-                        <a href="product-details.html?name=Pitch Ball&sport=Football&price=24.00" class="card-btn">View Details</a>
-                    </div>
-                </div>
-                <!-- Add other football balls similarly -->
+    <section class="product-tabs">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('description')">Description</button>
+            <button class="tab-btn" onclick="openTab('specs')">Specifications</button>
+            <button class="tab-btn" onclick="openTab('reviews')">Reviews</button>
+        </div>
+        
+        <div id="description" class="tab-content active">
+            <h3>Product Description</h3>
+            <p>Dfrejkqhtrehtkjfbwrt ewrtkerwkeejrhweurthwkjef rqewuthr</p>
+        </div>
+        
+        <div id="specs" class="tab-content">
+            <h3>Technical Specifications</h3>
+            <ul>
+                <li>Weight: 410-450g</li>
+                <li>Circumference: 68-70cm</li>
+                <li>Water-resistant</li>
+            </ul>
+        </div>
+        
+        <div id="reviews" class="tab-content">
+            <h3>Customer Reviews</h3>
+            <!-- Review content -->
+        </div>
+    </section><br><br><br>
+
+    <section class="product-detail">
+        <div class="product-gallery">
+            <img src="./images/football-nike.png" alt="Pitch Ball" class="main-image">
+            <div class="thumbnail-container">
+                <img src="./images/football-nike.png" alt="Alternative view">
+                <img src="./images/football-adidas.png" alt="Alternative view">
             </div>
         </div>
-
-        <div class="why-proball">
-            <h2>Basketball Balls</h2>
-            <hr>
-            <div class="ball-cards" id="basketball-balls">
-                <div class="card">
-                    <img src="images/strike-ball.png" alt="Strike Ball" class="card-img">
-                    <div class="description">
-                        <h3>Strike Ball</h3>
-                        <p>Durable, precise, and built for power.</p>
-                        <p>$28.00</p>
-                        <a href="product-details.html?name=Strike Ball&sport=Basketball&price=28.00" class="card-btn">View Details</a>
-                    </div>
-                </div>
-                <!-- Add other basketball balls -->
+        
+        <div class="product-info">
+            <h1 id="productName">Pitch Ball</h1>
+            <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">(24 reviews)</span>
             </div>
-        </div>
-
-        <div class="why-proball">
-            <h2>Rugby Balls</h2>
-            <hr>
-            <div class="ball-cards" id="rugby-balls">
-                <div class="card">
-                    <img src="images/league-ball.png" alt="League Ball" class="card-img">
-                    <div class="description">
-                        <h3>League Ball</h3>
-                        <p>Champions League-inspired.</p>
-                        <p>$30.00</p>
-                        <a href="product-details.html?name=League Ball&sport=Rugby&price=30.00" class="card-btn">View Details</a>
-                    </div>
-                </div>
-                <!-- Add other rugby balls -->
+            <p class="price">$24.99</p>
+            <p class="description">Bright, durable, and match-ready football designed for professional play and training.</p>
+            
+            <div class="product-meta">
+                <p><strong>Sport:</strong> <span id="sportType">Football</span></p>
+                <p><strong>Material:</strong> High-grade synthetic leather</p>
+                <p><strong>Size:</strong> Standard 5</p>
+                <p><strong>In Stock:</strong> 15 units</p>
+            </div>
+            
+            <div class="quantity-selector">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" min="1" max="10" value="1">
+            </div>
+            
+            <div class="action-buttons">
+                <button class="btn-primary" onclick="addToCart()">Add to Cart</button>
+                <button class="btn-secondary">Buy Now</button>
             </div>
         </div>
     </section>
 
+    <section class="product-tabs">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('description')">Description</button>
+            <button class="tab-btn" onclick="openTab('specs')">Specifications</button>
+            <button class="tab-btn" onclick="openTab('reviews')">Reviews</button>
+        </div>
+        
+        <div id="description" class="tab-content active">
+            <h3>Product Description</h3>
+            <p>Dfrejkqhtrehtkjfbwrt ewrtkerwkeejrhweurthwkjef rqewuthr</p>
+        </div>
+        
+        <div id="specs" class="tab-content">
+            <h3>Technical Specifications</h3>
+            <ul>
+                <li>Weight: 410-450g</li>
+                <li>Circumference: 68-70cm</li>
+                <li>Water-resistant</li>
+            </ul>
+        </div>
+        
+        <div id="reviews" class="tab-content">
+            <h3>Customer Reviews</h3>
+            <!-- Review content -->
+        </div>
+    </section><br><br>
+
+    <section class="product-detail">
+        <div class="product-gallery">
+            <img src="./images/football-nike.png" alt="Pitch Ball" class="main-image">
+            <div class="thumbnail-container">
+                <img src="./images/football-nike.png" alt="Alternative view">
+                <img src="./images/football-adidas.png" alt="Alternative view">
+            </div>
+        </div>
+        
+        <div class="product-info">
+            <h1 id="productName">Pitch Ball</h1>
+            <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">(24 reviews)</span>
+            </div>
+            <p class="price">$24.99</p>
+            <p class="description">Bright, durable, and match-ready football designed for professional play and training.</p>
+            
+            <div class="product-meta">
+                <p><strong>Sport:</strong> <span id="sportType">Football</span></p>
+                <p><strong>Material:</strong> High-grade synthetic leather</p>
+                <p><strong>Size:</strong> Standard 5</p>
+                <p><strong>In Stock:</strong> 15 units</p>
+            </div>
+            
+            <div class="quantity-selector">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" min="1" max="10" value="1">
+            </div>
+            
+            <div class="action-buttons">
+                <button class="btn-primary" onclick="addToCart()">Add to Cart</button>
+                <button class="btn-secondary">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-tabs">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('description')">Description</button>
+            <button class="tab-btn" onclick="openTab('specs')">Specifications</button>
+            <button class="tab-btn" onclick="openTab('reviews')">Reviews</button>
+        </div>
+        
+        <div id="description" class="tab-content active">
+            <h3>Product Description</h3>
+            <p>Dfrejkqhtrehtkjfbwrt ewrtkerwkeejrhweurthwkjef rqewuthr</p>
+        </div>
+        
+        <div id="specs" class="tab-content">
+            <h3>Technical Specifications</h3>
+            <ul>
+                <li>Weight: 410-450g</li>
+                <li>Circumference: 68-70cm</li>
+                <li>Water-resistant</li>
+            </ul>
+        </div>
+        
+        <div id="reviews" class="tab-content">
+            <h3>Customer Reviews</h3>
+            <!-- Review content -->
+        </div>
+    </section><br><br>
+
+    <section class="product-detail">
+        <div class="product-gallery">
+            <img src="./images/football-nike.png" alt="Pitch Ball" class="main-image">
+            <div class="thumbnail-container">
+                <img src="./images/football-nike.png" alt="Alternative view">
+                <img src="./images/football-adidas.png" alt="Alternative view">
+            </div>
+        </div>
+        
+        <div class="product-info">
+            <h1 id="productName">Pitch Ball</h1>
+            <div class="rating">
+                <span class="stars">★★★★☆</span>
+                <span class="review-count">(24 reviews)</span>
+            </div>
+            <p class="price">$24.99</p>
+            <p class="description">Bright, durable, and match-ready football designed for professional play and training.</p>
+            
+            <div class="product-meta">
+                <p><strong>Sport:</strong> <span id="sportType">Football</span></p>
+                <p><strong>Material:</strong> High-grade synthetic leather</p>
+                <p><strong>Size:</strong> Standard 5</p>
+                <p><strong>In Stock:</strong> 15 units</p>
+            </div>
+            
+            <div class="quantity-selector">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" min="1" max="10" value="1">
+            </div>
+            
+            <div class="action-buttons">
+                <button class="btn-primary" onclick="addToCart()">Add to Cart</button>
+                <button class="btn-secondary">Buy Now</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-tabs">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="openTab('description')">Description</button>
+            <button class="tab-btn" onclick="openTab('specs')">Specifications</button>
+            <button class="tab-btn" onclick="openTab('reviews')">Reviews</button>
+        </div>
+        
+        <div id="description" class="tab-content active">
+            <h3>Product Description</h3>
+            <p>Dfrejkqhtrehtkjfbwrt ewrtkerwkeejrhweurthwkjef rqewuthr</p>
+        </div>
+        
+        <div id="specs" class="tab-content">
+            <h3>Technical Specifications</h3>
+            <ul>
+                <li>Weight: 410-450g</li>
+                <li>Circumference: 68-70cm</li>
+                <li>Water-resistant</li>
+            </ul>
+        </div>
+        
+        <div id="reviews" class="tab-content">
+            <h3>Customer Reviews</h3>
+            <!-- Review content -->
+        </div>
+    </section>
     <footer class="footer">
         <div class="contact-footer">
             <div>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Consistent head section -->
+    <title>Checkout - ProBall Rwanda</title>
+</head>
+<body>
+    <header>
+        <!-- Consistent header -->
+    </header>
+
+    <section class="checkout-container">
+        <div class="checkout-steps">
+            <div class="step active">1. Shipping</div>
+            <div class="step">2. Payment</div>
+            <div class="step">3. Review</div>
+        </div>
+        
+        <div class="checkout-form">
+            <form id="shippingForm">
+                <h2>Shipping Information</h2>
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="city">City</label>
+                        <input type="text" id="city" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="zip">ZIP Code</label>
+                        <input type="text" id="zip" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                <button type="button" class="btn-next" onclick="nextStep()">Continue to Payment</button>
+            </form>
+            
+            <div class="order-summary">
+                <h3>Your Order</h3>
+                <div class="summary-items">
+                    <!-- Cart items summary -->
+                </div>
+                <div class="summary-total">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span>$24.99</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Shipping</span>
+                        <span>$5.00</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total</span>
+                        <span>$29.99</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Consistent footer -->
+    </footer>
+
+    <script>
+        // JavaScript for checkout process
+    </script>
+</body>
+</html>

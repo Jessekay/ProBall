@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Consistent head section -->
+    <title>My Orders - ProBall Rwanda</title>
+</head>
+<body>
+    <header>
+        <!-- Consistent header -->
+    </header>
+
+    <section class="orders-container">
+        <h1>My Orders</h1>
+        
+        <div class="order-filters">
+            <button class="filter-btn active">All Orders</button>
+            <button class="filter-btn">Pending</button>
+            <button class="filter-btn">Completed</button>
+            <button class="filter-btn">Cancelled</button>
+        </div>
+        
+        <div class="orders-list" id="ordersList">
+            <!-- Dynamic order items -->
+            <div class="order-card">
+                <div class="order-header">
+                    <div class="order-meta">
+                        <span class="order-id">Order #PB12345</span>
+                        <span class="order-date">June 15, 2025</span>
+                    </div>
+                    <div class="order-status pending">Pending</div>
+                </div>
+                
+                <div class="order-items">
+                    <div class="order-item">
+                        <img src="./images/pitch-ball.png" alt="Pitch Ball">
+                        <div class="item-info">
+                            <h4>Pitch Ball</h4>
+                            <p>Qty: 1</p>
+                            <p>$24.99</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-footer">
+                    <div class="order-total">
+                        <span>Total:</span>
+                        <span>$29.99</span>
+                    </div>
+                    <div class="order-actions">
+                        <button class="btn-track">Track Order</button>
+                        <button class="btn-cancel">Cancel Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <!-- Consistent footer -->
+    </footer>
+
+    <script>
+        // JavaScript for order management
+    </script>
+</body>
+</html>
