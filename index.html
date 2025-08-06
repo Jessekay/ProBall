@@ -42,10 +42,14 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
 
+        <!-- <div class="light"></div> -->
+        <button onclick="myFunction()"><i class="ri-moon-line"></i></button>
+
         <div class="right-content">
             <a href="login.html" class="nav-btn"> Sign In</a>
             <div class="bx bx-menu" id="menu-icon"></div>
         </div>
+
     </header>
 
     <!-- hero section -->
@@ -210,7 +214,15 @@
     </section><br>
     <hr class="copyright-hr"><br><br>
     <p class="copyright">&COPY; 2025 ProBall Rwanda, Inc</p><br><br>
-    <script src="./js/script.js"></script>
+    <script src="./js/script.js">
+  
+    </script>
 
 </body>
+<script>
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
 </html>
