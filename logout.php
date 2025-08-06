@@ -1,20 +1,12 @@
-<!-- <?php 
-// session_start();
-// session_unset();
-// session_destroy();
-
-// header('Content-Type: application/json');
-// echo json_encode([
-    // 'success' => true,
-    // 'message' => 'Logged out successfully'
-// ]);
-// exit;
-// ?> -->
-
 <?php
 session_start();
 session_unset();
 session_destroy();
-header('Location: index.html');
+
+header('Content-Type: application/json');
+echo json_encode([
+    'success' => true,
+    'message' => 'Logged out successfully'
+]);
 exit;
 ?>

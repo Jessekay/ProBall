@@ -116,7 +116,7 @@ header {
     display: inline-block;
     padding: 9px 24px;
     background: transparent;
-    border: 2px solid var(--text-color);
+    /* border: 2px solid var(--text-color); */
     border-radius: 10px;
     color: var(--text-color);
     font-size: 15px;
@@ -140,6 +140,65 @@ header {
 /* ===== Hero Section ===== */
 section {
     padding: 0 14%;
+}
+
+.wrapper {
+    display: list-item;
+    width: 50%;
+}
+
+.wrapper .static-text {
+    color: var(--text-color);
+    font-size: 60px;
+    font-weight: 400;
+}
+
+.wrapper .dynamic-texts {
+    line-height: 90px;
+    height: 90px;
+    overflow: hidden;
+}
+
+.dynamic-texts li {
+    list-style: none;
+    color: var(--accent-color);
+    font-size: 60px;
+    font-weight: bold;
+    top: 0;
+    position: relative;
+    animation: slide 12s steps(4) infinite;
+}
+
+@keyframes slide {
+    100% {
+        top: -360px;
+    }
+}
+
+.dynamic-texts li {
+    position: relative;
+    color: var(--main-color);
+}
+
+.dynamic-texts li::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--bg-color);
+    border-left: 4px solid var(--main-color);
+    animation: typing 3s steps(15) infinite;
+}
+
+@keyframes typing {
+    40%,
+    60% {
+        left: calc(100% + 30px);
+    }
+    100% {
+        left: 0;
+    }
 }
 
 .hero {
@@ -505,7 +564,7 @@ section {
     display: grid;
     justify-content: center;
     margin-top: 9rem;
-    margin-left: 25rem;
+    margin-left: 30rem;
     width: 40%;
     border-radius: 20px;
 }
