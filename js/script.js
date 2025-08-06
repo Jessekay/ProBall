@@ -25,6 +25,13 @@
             dots[slideIndex-1].className += " active";
         }
 
+        fetch('check_session.php').then(response => response.json()).then(data => {
+    const sidebar = document.querySelector('.sidebar-menu');
+    if (!data.logged_in) {
+        sidebar.querySelector('#logout-btn').remove();
+    }
+});
+
         // document.addEventListener('DOMContentLoaded', () => {
         //     // Load cart items
         //     fetch('get_cart.php')
@@ -224,7 +231,7 @@
 
         // // user profile
 
-        Div = document.getElementById('message');
+        // Div = document.getElementById('message');
         //     messageDiv.textContent = text;
         //     messageDiv.style.color = isSuccess ? 'var(--main-color)' : '#ff0000';
         //     messageDiv.style.display = 'block';
