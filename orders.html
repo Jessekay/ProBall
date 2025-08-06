@@ -2,12 +2,36 @@
 <html lang="en">
 <head>
     <!-- Consistent head section -->
-    <title>My Orders - ProBall Rwanda</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - ProBall Rwanda</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 </head>
+    <title>My Orders - ProBall Rwanda</title>
 <body>
-    <header>
-        <!-- Consistent header -->
-    </header>
+     <header>
+        <a href="index.html" class="logo">
+            <img src="./images/logo.png" alt="ProBall">
+        </a>
+        <ul class="navlist">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Shop</a></li>
+            <li class="dropdown">
+                <a href="#">Categories</a>
+                <ul class="categories-items">
+                    <li><a class="dropdown-a" href="football.html">Football</a></li>
+                    <li><a class="dropdown-a" href="basketball.html">Basketball</a></li>
+                    <li><a class="dropdown-a" href="rugby.html">Rugby</a></li>
+                </ul>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="right-content">
+            <a href="profile.html" class="nav-btn">Profile</a>
+            <a href="cart.html" class="nav-btn">Cart</a>
+        </div>
+    </header><br><br><br>
 
     <section class="orders-container">
         <h1>My Orders</h1>
@@ -57,6 +81,38 @@
 
     <footer>
         <!-- Consistent footer -->
+         <section class="footer">
+        <div class="partners">
+            <h5 class="partners-title"></h5><br><br><br>
+            <div class="brands">
+                <img src="./images/adidas-seeklogo.png" class="brand-logo">
+                <img src="./images/nike-seeklogo.png" class="brand-logo nike">
+                <img src="./images/air-jordan-seeklogo.png" class="brand-logo">
+                <img src="./images/masita-seeklogo.png" class="brand-logo">
+            </div>
+        </div>
+    </section><br><br>
+
+    <section class="contact-footer" id="contact">
+        <div>
+            <h2 class="contact-us">Contact Us</h2>
+            <hr class="contact-hr"><br>
+            <i class="ri-mail-fill"></i> @proball <br><br>
+            <i class="ri-phone-fill"></i> +250787667797 <br><br>
+        </div>
+
+        <div class="address">
+            <h2 class="address">Address</h2>
+            <hr class="address-hr"><br>
+            <i class="ri-map-pin-fill"></i> KG 242 Street <br><br>
+            <i class="ri-building-fill"></i> Jesse's PLAZA
+        </div>
+    </section><br>
+    <div class="scroll">
+        <a href="#"><i class="ri-arrow-up-circle-fill"></i></a >
+    </div><br><br>
+    <hr class="copyright-hr"><br><br>
+    <p class="copyright">&COPY; 2025 ProBall Rwanda, Inc</p><br><br>
     </footer>
 
     <script>
