@@ -84,12 +84,24 @@ async function register() {
             password: document.getElementById('password').value
         };
 
+        // Regex patterns
+        const nameRegex = /^[A-Za-z]+$/;
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
         // Client-side validation
         if (!formData.first_name || !formData.last_name || !formData.email || !formData.password) {
             throw new Error('All fields are required');
         }
 
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+        if (!nameRegex.test(formData.first_name)) {
+            throw new Error('First name must contain only letters');
+        }
+
+        if (!nameRegex.test(formData.last_name)) {
+            throw new Error('Last name must contain only letters');
+        }
+
+        if (!emailRegex.test(formData.email)) {
             throw new Error('Please enter a valid email');
         }
 
@@ -107,7 +119,6 @@ async function register() {
             body: JSON.stringify(formData)
         });
 
-        // Handle non-JSON responses
         const contentType = response.headers.get('content-type');
         if (!contentType || !contentType.includes('application/json')) {
             const text = await response.text();
@@ -147,7 +158,6 @@ function showMessage(message, isSuccess) {
     messageDiv.style.borderRadius = '4px';
     messageDiv.style.backgroundColor = isSuccess ? '#d4edda' : '#f8d7da';
     
-    // Auto-hide success messages after redirect
     if (!isSuccess) {
         setTimeout(() => {
             messageDiv.style.display = 'none';
